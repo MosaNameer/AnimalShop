@@ -3,7 +3,7 @@
     @livewireStyles
     @vite('resources/css/app.css')
 </head>
-<body>
+<body class="bg-gradient-to-br from-pink-300 via-purple-300 to-indigo-400">
     <div>
         @livewire('components.navbar.main')
     </div>

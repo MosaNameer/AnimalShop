@@ -1,4 +1,4 @@
-    <nav class="relative px-4 py-4 flex justify-between items-center bg-white">
+    <nav class="relative px-4 py-4 flex justify-between items-cente">
         <a class="text-3xl font-bold leading-none {{ Request::route()->getName() === 'home' ? 'text-blue-500 font-semibold' : 'text-gray-400' }}" href="{{ route('home') }}">
             <svg class="h-10" alt="logo" viewBox="0 0 10240 10240">
                 <path xmlns="http://www.w3.org/2000/svg"
