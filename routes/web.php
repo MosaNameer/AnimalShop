@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\TestController;
-use App\Http\Livewire\Animal;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Livewire\Pages\Home\Main as Home;
+use App\Http\Livewire\Pages\Category\Main as Category;
+use App\Http\Livewire\Pages\AboutUs\Main as About;
+use App\Http\Livewire\Pages\Pet\Main as Pet;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,4 +20,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/animal", Animal::class)->name("animal");
+Route::get("/home", Home::class)->name("home");
+Route::get("/category", Category::class)->name("category");
+Route::get("/about", About::class)->name("about");
+Route::get("/pet", Pet::class)->name("pet");
+
