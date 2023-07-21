@@ -22,6 +22,29 @@
 
     <h1 class="ml-16 font-bold text-3xl">Categories</h1>
     <div class="flex w-full justify-center gap-x-10 my-5">
-            @livewire('pages.home.pets-card')
+        @livewire('pages.home.pets-card')
+    </div>
+
+    {{-- pets cards --}}
+
+    <div class="flex justify-center">
+        <section class="splide" aria-label="Splide Basic HTML Example">
+            <div class="splide__track">
+                <ul class="splide__list ">
+                    @for ($i = 0; $i < 9; $i++)
+                        <li class="splide__slide flex justify-center ">
+                            @livewire('pages.home.pets-card')
+                        </li>
+                    @endfor
+                </ul>
+            </div>
+        </section>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var splide = new Splide('.splide');
+        splide.mount();
+    });
+</script>
