@@ -1,20 +1,19 @@
-<div>
     <div
         class="border-gray-100/30 flex w-full max-w-xs flex-col self-center overflow-hidden rounded-lg border bg-gray-100 shadow-md">
         <a class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href="#">
-            <img class="peer absolute top-0 right-0 h-full w-full object-cover" src="{{ asset('img/cat1.jpg') }}"
+            <img class="peer absolute top-0 right-0 h-full w-full object-cover"
+                src="{{ asset('img/cat1.jpg') }}"
                 alt="product image" />
             <!-- <span class="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-gray-800">39% OFF</span> -->
         </a>
         <div class="mt-4 px-5 pb-5">
             <a href="#">
-                <h5 class="text-xl tracking-tight text-gray-800">Nike Air MX Super 2500 - Red</h5>
+                <h5 class="text-xl tracking-tight text-gray-800">Hamalaya cat</h5>
             </a>
             <div class="mt-2 mb-5 flex items-center justify-between">
                 <p>
-                    <span class="text-3xl font-bold text-gray-800">$449</span>
-                    {{-- discount --}}
-                    {{-- <span class="text-sm text-gray-800 line-through">$699</span> --}}
+                    <span class="text-3xl font-bold text-gray-800">$300</span>
+                    <span class="text-sm text-gray-800 line-through">$210</span>
                 </p>
             </div>
             <a href="#"
@@ -27,4 +26,8 @@
                 buy</a>
         </div>
     </div>
-</div>
+
+
+
+
+

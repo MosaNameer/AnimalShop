@@ -16,9 +16,9 @@ use App\Http\Livewire\Pages\Pet\Main as Pet;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get("/home", Home::class)->name("home");
 Route::get("/category", Category::class)->name("category");

@@ -9,8 +9,8 @@
             </p>
 
             <div class="mt-16">
-                <button type="button"
-                    class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300  font-medium rounded-lg text-sm px-6 py-2.5 text-center mr-2 mb-2">Pets</button>
+                <a type="button" href="{{ route('pet') }}"
+                    class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300  font-medium rounded-lg text-sm px-6 py-2.5 text-center mr-2 mb-2">Pets</a>
             </div>
         </div>
         <div class="w-full">
@@ -19,32 +19,31 @@
     </div>
 
     {{-- category cards --}}
+    <div class="flex justify-between mb-10">
+        <h1 class="ml-16 font-bold text-3xl">Categories</h1>
+        <u>
+            <a href="" class="mr-16 font-semibold text-xl">more</a>
+        </u>
 
-    <h1 class="ml-16 font-bold text-3xl">Categories</h1>
-    <div class="flex w-full justify-center gap-x-10 my-5">
-        @livewire('pages.home.pets-card')
+    </div>
+    <div class="grid grid-cols-3 mx-16   justify-items-center">
+        @for ($i = 0; $i < 3; $i++)
+            @livewire('pages.home.category-card')
+        @endfor
     </div>
 
-    {{-- pets cards --}}
 
-    <div class="flex justify-center">
-        <section class="splide" aria-label="Splide Basic HTML Example">
-            <div class="splide__track">
-                <ul class="splide__list ">
-                    @for ($i = 0; $i < 9; $i++)
-                        <li class="splide__slide flex justify-center ">
-                            @livewire('pages.home.pets-card')
-                        </li>
-                    @endfor
-                </ul>
-            </div>
-        </section>
+    {{-- pets card --}}
+    <div class="flex justify-between mb-10 mt-36">
+        <h1 class="ml-16 font-bold text-3xl">Pets</h1>
+        <u>
+            <a href="" class="mr-16 font-semibold text-xl">more</a>
+        </u>
+
+    </div>
+    <div class="grid grid-cols-4 mx-16   justify-items-center">
+        @for ($i = 0; $i < 4; $i++)
+            @livewire('pages.home.pets-card')
+        @endfor
     </div>
 </div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var splide = new Splide('.splide');
-        splide.mount();
-    });
-</script>
