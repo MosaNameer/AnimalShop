@@ -5,9 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Pet extends Model
+class pet extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         "name",
         "age",
@@ -20,4 +21,11 @@ class Pet extends Model
         "image",
         "status"
     ];
+
+    #RelationShips
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

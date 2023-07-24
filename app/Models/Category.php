@@ -13,4 +13,10 @@ class Category extends Model
         "description",
         "image"
     ];
+
+    #RelationShips
+    public function pets()
+    {
+        return $this->hasMany(Pet::class);
+    }
 }

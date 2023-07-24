@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string("color");
             $table->string("image")->nullable();
             $table->string("status")->nullable(); # 1 for sale, 2 sold
+            $table->foreignId("category_id")->constrained("categories");
         });
     }
 
