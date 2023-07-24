@@ -16,13 +16,11 @@
                 </div>
 
                 <h3 class="text-lg font-bold mb-2">
-                    1. Dogs
+                    {{ $category->name }}
                 </h3>
 
                 <p class="text-sm leading-6 text-gray-600">
-                    Metus potenti velit sollicitudin porttitor magnis elit lacinia tempor varius, ut cras orci vitae
-                    parturient id nisi vulputate consectetur, primis venenatis cursus tristique malesuada viverra
-                    congue risus.
+                    {{ $category->description }}
                 </p>
 
             </div>

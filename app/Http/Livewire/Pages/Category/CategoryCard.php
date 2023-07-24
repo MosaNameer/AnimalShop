@@ -6,6 +6,7 @@ use Livewire\Component;
 
 class CategoryCard extends Component
 {
+    public $category;
     public function render()
     {
         return view('livewire.pages.category.category-card');

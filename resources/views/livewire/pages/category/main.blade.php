@@ -4,8 +4,12 @@
     </h1>
 
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-        @for ($i = 0; $i < 10; $i++)
-        @livewire('pages.category.category-card')
-        @endfor
+        @forelse ($category as $item)
+            @livewire('pages.category.category-card', ['category' => $item], key($item->id))
+        @empty
+            <div class="text-center">
+                <h1 class="text-3xl font-bold">No Category Found</h1>
+            </div>
+        @endforelse
     </div>
 </div>
