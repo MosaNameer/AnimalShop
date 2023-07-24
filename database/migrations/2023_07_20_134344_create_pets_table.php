@@ -18,6 +18,8 @@ return new class extends Migration
             $table->integer("age")->nullable();
             $table->integer("price")->nullable();
             $table->string("gender")->nullable(); # 1 for male and 2 for female
+            $table->string("category")->nullable();
+            $table->string("description")->nullable();
             $table->string("breed")->nullable();
             $table->string("color");
             $table->string("image")->nullable();

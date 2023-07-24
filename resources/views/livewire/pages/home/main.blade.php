@@ -22,7 +22,7 @@
     <div class="flex justify-between mb-10">
         <h1 class="ml-16 font-bold text-3xl">Categories</h1>
         <u>
-            <a href="" class="mr-16 font-semibold text-xl">more</a>
+            <a href="{{ route('category') }}" class="mr-16 font-semibold text-xl">more</a>
         </u>
 
     </div>
@@ -37,7 +37,7 @@
     <div class="flex justify-between mb-10 mt-36">
         <h1 class="ml-16 font-bold text-3xl">Pets</h1>
         <u>
-            <a href="" class="mr-16 font-semibold text-xl">more</a>
+            <a href="{{ route('pet') }}" class="mr-16 font-semibold text-xl">more</a>
         </u>
 
     </div>
