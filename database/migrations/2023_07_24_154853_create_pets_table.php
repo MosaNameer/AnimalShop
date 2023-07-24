@@ -17,13 +17,13 @@ return new class extends Migration
             $table->string("name")->nullable();
             $table->integer("age")->nullable();
             $table->integer("price")->nullable();
-            $table->string("gender")->nullable(); # 1 for male and 2 for female
+            $table->integer("gender")->nullable(); # 1 for male and 2 for female
             $table->string("category")->nullable();
             $table->string("description")->nullable();
             $table->string("breed")->nullable();
             $table->string("color");
             $table->string("image")->nullable();
-            $table->string("status")->nullable(); # 1 for sale, 2 sold
+            $table->integer("status")->nullable(); # 1 for sale, 2 sold
             $table->foreignId("category_id")->constrained("categories");
         });
     }
