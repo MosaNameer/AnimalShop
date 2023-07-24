@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            // pet category table
             $table->string("name")->nullable();
             $table->string("description")->nullable();
             $table->string("image")->nullable();

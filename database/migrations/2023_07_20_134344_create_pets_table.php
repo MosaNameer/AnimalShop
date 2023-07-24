@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string("breed")->nullable();
             $table->string("color");
             $table->string("image")->nullable();
-            $table->string("status")->nullable(); # 1 for sale, 2 sold, 3 for adoption,  1 adopted
+            $table->string("status")->nullable(); # 1 for sale, 2 sold
         });
     }
 
