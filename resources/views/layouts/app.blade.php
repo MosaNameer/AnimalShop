@@ -19,10 +19,10 @@
     @livewireStyles
 </head>
 
-<body class="font-sans antialiased">
+<body class="font-sans antialiased bg-gradient-to-br from-pink-300 via-purple-300 to-indigo-400">
     <x-banner />
 
-    <div class="min-h-screen bg-gray-100">
+    <div class="min-h-screen ">
         {{-- @livewire('navigation-menu') --}}
         @livewire('components.navbar.main')
 
