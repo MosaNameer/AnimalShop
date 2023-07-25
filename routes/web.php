@@ -5,6 +5,8 @@ use App\Http\Livewire\Pages\Home\Main as Home;
 use App\Http\Livewire\Pages\Category\Main as Category;
 use App\Http\Livewire\Pages\AboutUs\Main as About;
 use App\Http\Livewire\Pages\Pet\Main as Pet;
+use App\Http\Livewire\Pages\Pet\ShowPet;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,5 +39,5 @@ Route::get("/home", Home::class)->name("home");
 Route::get("/category", Category::class)->name("category");
 Route::get("/about", About::class)->name("about");
 Route::get("/pet", Pet::class)->name("pet");
-
-
+// show pet details
+Route::get("/pet/{id}", ShowPet::class)->name("showPet");

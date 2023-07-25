@@ -14,6 +14,7 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
 
     <!-- Styles -->
     @livewireStyles
@@ -39,10 +40,16 @@
         <main>
             {{ $slot }}
         </main>
+
+        <p class="text-center text-sm text-gray-500 my-10">
+            &copy; جميع الحقوق محفوظة لدى شركة تقنونة ٢٠٢٣
+        </p>
     </div>
 
     @stack('modals')
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
     @livewireScripts
 </body>
 

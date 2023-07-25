@@ -22,7 +22,7 @@ class PetSeeder extends Seeder
             "breed" => "dog",
             "color" => "black",
             "image" => "dog.jpg",
-            "status" => 1,
+            // "status" => 1,
             "category_id" => "1"
         ]);
         Pet::create([
@@ -35,7 +35,7 @@ class PetSeeder extends Seeder
             "breed" => "dog",
             "color" => "white",
             "image" => "dog.jpg",
-            "status" => 2,
+            // "status" => 2,
             "category_id" => "1"
         ]);
         Pet::create([
@@ -48,7 +48,7 @@ class PetSeeder extends Seeder
             "breed" => "dog",
             "color" => "white",
             "image" => "cat.jpg",
-            "status" => 1,
+            // "status" => 1,
             "category_id" => "2"
         ]);
     }
