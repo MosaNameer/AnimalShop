@@ -1,9 +1,8 @@
 <div>
-    <a href="">
-        <div class="container mx-auto px-20">
-            <div class="pt-20 lg:pt-0 pb-10  lg:pb-20" style="cursor: auto;">
+    <div class="container mx-auto px-20">
+        <a href="{{ route('showCategory', $category->id) }}">
+            <div class="pt-20 lg:pt-0 pb-10  lg:pb-20">
                 <div class="p-6 bg-gray-100 rounded-lg">
-
                     <div class="mb-5">
 
                         <svg class="hi-outline hi-template inline-block w-12 h-12 text-indigo-500" stroke="currentColor"
@@ -25,6 +24,6 @@
 
                 </div>
             </div>
-        </div>
-    </a>
+        </a>
+    </div>
 </div>
