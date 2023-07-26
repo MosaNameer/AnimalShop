@@ -19,7 +19,7 @@ class Pet extends Model
         "breed",
         "color",
         "image",
-        "status"
+        "category_id",
     ];
 
     #RelationShips

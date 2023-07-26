@@ -8,10 +8,10 @@ use Livewire\Component;
 
 class Main extends Component
 {
-    public $category_id;
-    public $name, $age, $price, $gender, $category, $description, $breed, $color, $image;
+    public $name, $age, $price, $gender, $description, $breed, $color, $image, $category_id;
     public $pet;
     public $categories;
+
 
     function addPet()
     {
@@ -21,13 +21,11 @@ class Main extends Component
             "age" => $this->age,
             "price" => $this->price,
             "gender" => $this->gender,
-            "category" => $this->category,
             "description" => $this->description,
             "breed" => $this->breed,
             "color" => $this->color,
             "image" => $this->image,
             "category_id" => $this->category_id,
-
         ]);
     }
     public function render()

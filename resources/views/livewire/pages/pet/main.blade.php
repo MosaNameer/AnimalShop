@@ -93,13 +93,13 @@
                                 <label for="category"
                                     class="block  text-sm font-medium text-gray-900 dark:text-white">Select a
                                     category</label>
-                                <select id="category" wire:model="category"
+                                <select id="category" wire:model="category_id"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                     <option selected>Choose a category</option>
                                     @forelse ($categories as $item)
-                                        <option value="{{ $item->name }}">{{ $item->name }}</option>
+                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
                                     @empty
-                                        <option value="">there is no categories</option>
+                                        <option>there is no categories</option>
                                     @endforelse
                                 </select>
                             </div>
