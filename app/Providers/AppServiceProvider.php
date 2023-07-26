@@ -29,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         Blade::if('superAdmin', function () {
-            return auth()->check() && auth()->user()->role == 1 && (auth()->user()->id == 1 || auth()->user()->id == 2);
+            return auth()->check() && auth()->user()->role == 1 && auth()->user()->id == 1;
         });
     }
 }

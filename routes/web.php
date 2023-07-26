@@ -19,9 +19,9 @@ use App\Http\Livewire\Pages\Pet\ShowPet;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/welcome', function () {
+//     return view('welcome');
+// });
 
 Route::middleware([
     'auth:sanctum',
@@ -36,7 +36,7 @@ Route::middleware([
 
 
 
-Route::get("/home", Home::class)->name("home");
+Route::get("/", Home::class)->name("home");
 Route::get("/category", Category::class)->name("category");
 Route::get("/about", About::class)->name("about");
 Route::get("/pet", Pet::class)->name("pet");
