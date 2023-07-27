@@ -20,7 +20,7 @@
     <div
         class="border-gray-100/30 flex w-full max-w-xs flex-col self-center overflow-hidden rounded-lg border bg-gray-100 shadow-md">
         <a class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href="{{ route('showPet', $pet->id) }}">
-            <img class="peer absolute top-0 right-0 h-full w-full object-cover" src="{{ asset('img/cat1.jpg') }}"
+            <img class="peer absolute top-0 right-0 h-full w-full object-cover" src="{{ asset($pet->image) }}"
                 alt="product image" />
             <!-- <span class="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-gray-800">39% OFF</span> -->
         </a>
@@ -56,7 +56,7 @@
                     <path fill="#FFF"
                         d="M96.678 74.148c-2.386-5.303-4.897-5.41-7.166-5.503c-1.858-.08-3.982-.074-6.104-.074c-2.124 0-5.575.799-8.492 3.984c-2.92 3.188-11.148 10.892-11.148 26.561c0 15.67 11.413 30.813 13.004 32.94c1.593 2.123 22.033 35.307 54.405 48.073c26.904 10.609 32.379 8.499 38.218 7.967c5.84-.53 18.844-7.702 21.497-15.139c2.655-7.436 2.655-13.81 1.859-15.142c-.796-1.327-2.92-2.124-6.105-3.716c-3.186-1.593-18.844-9.298-21.763-10.361c-2.92-1.062-5.043-1.592-7.167 1.597c-2.124 3.184-8.223 10.356-10.082 12.48c-1.857 2.129-3.716 2.394-6.9.801c-3.187-1.598-13.444-4.957-25.613-15.806c-9.468-8.442-15.86-18.867-17.718-22.056c-1.858-3.184-.199-4.91 1.398-6.497c1.431-1.427 3.186-3.719 4.78-5.578c1.588-1.86 2.118-3.187 3.18-5.311c1.063-2.126.531-3.986-.264-5.579c-.798-1.593-6.987-17.343-9.819-23.64" />
                 </svg>
-                <p class="ml-3 font-bold">
+                <p class="ml-3 font-bold text-white">
                     buy
                 </p>
             </a>

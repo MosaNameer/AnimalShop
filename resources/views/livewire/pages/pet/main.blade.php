@@ -4,9 +4,17 @@
             <h1 class="text-3xl font-bold">Find youe Pet</h1>
             <p class="text-gray-500">There are all kinds of pets that you want here.</p>
         </div>
-        <div>
-            <button type="button" data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
-                class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">+</button>
+        <div class="flex gap-x-5">
+            <div>
+                <input type="search" id="search" wire:model="search"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                    placeholder="Search" required>
+            </div>
+
+            <div>
+                <button type="button" data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
+                    class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">+</button>
+            </div>
         </div>
     </div>
     <div class="grid grid-cols-1 gap-20 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 mx-16 mt-20 ">
@@ -22,7 +30,7 @@
 
 
 
-{{-- MODAL --}}
+    {{-- MODAL --}}
     <div id="authentication-modal" tabindex="-1" aria-hidden="true" wire:ignore.self
         class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative w-full max-w-md max-h-full">

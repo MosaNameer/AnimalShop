@@ -6,25 +6,49 @@ use App\Models\Category;
 use App\Models\Pet;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Livewire\WithPagination;
 
 class Main extends Component
 {
     use WithFileUploads;
+    use WithPagination;
+
+    protected $listeners = ['$refresh', 'search'];
+
     public $name, $age, $price, $gender, $description, $breed, $color, $image, $category_id;
     public $pet;
     public $categories;
-
+    public $search = '';
 
 
     function addPet()
     {
 
+        $messages = [
+            'required' => 'هذا الحقل مطلوب',
+            'min' => 'هذا الحقل يجب أن يكون على الأقل :min حروف',
+            'image' => 'هذا الحقل يجب أن يكون صورة',
+            'mimes' => 'هذا الحقل يجب أن يكون من نوع :values',
+            'max' => 'هذا الحقل يجب أن لا يتجاوز :max كيلوبايت',
+            'unique' => 'هذا الحقل موجود مسبقاً',
+        ];
+
+        // upload the image to the database
         $this->validate([
-            'image' => 'image|max:1024', // 1MB Max
+            'name' => 'required',
+            'age' => 'required',
+            'price' => 'required',
+            'gender' => 'required',
+            'description' => 'required',
+            'breed' => 'required',
+            'color' => 'required',
+            'category_id' => 'required',
+            'image' => 'required', // 1MB Max
         ]);
-
-        $this->image->store('photos', 'public');
-
+        $ext = $this->image->extension();
+        $name = time() . '.' . $ext;
+        $this->image->storeAs('public/pets', $name);
+        $this->image = 'storage/pets/' . $name;
         // add data to the database
         Pet::create([
             "name" => $this->name,
@@ -37,11 +61,26 @@ class Main extends Component
             "image" => $this->image,
             "category_id" => $this->category_id,
         ]);
+        $this->reset();
+        session()->flash('message', 'تم إضافة الحيوان بنجاح.');
+        return redirect()->to(route('pet'));
     }
-    public function render()
+
+    public function mount()
     {
         $this->pet = Pet::all();
         $this->categories = Category::all();
+    }
+    public function render()
+    {
+        $search = '%' . $this->search . '%';
+
+        // $this->pet =  Pet::where('name', 'LIKE', $search)->orderByDesc('name')->get();
+
+        $this->pet = Pet::where(function ($query) use ($search) {
+            $query->where('name', 'LIKE', $search)->orWhere('breed', 'LIKE', $search);
+        })->orderByDesc('name')->get();
+
         return view('livewire.pages.pet.main');
     }
 }
