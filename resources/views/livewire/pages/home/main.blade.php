@@ -27,9 +27,13 @@
 
     </div>
     <div class="grid grid-cols-3 mx-16   justify-items-center">
-        @for ($i = 0; $i < 3; $i++)
-            @livewire('pages.home.category-card')
-        @endfor
+        @forelse ($categories as $item)
+            @livewire('pages.home.category-card', ['category' => $item], key($item->id))
+        @empty
+            <div class="text-center">
+                <h1 class="text-3xl font-bold">No Category Found</h1>
+            </div>
+        @endforelse
     </div>
 
 
@@ -42,8 +46,12 @@
 
     </div>
     <div class="grid grid-cols-4 mx-16   justify-items-center">
-        @for ($i = 0; $i < 4; $i++)
-            @livewire('pages.home.pets-card')
-        @endfor
+        @forelse ($pets as $item)
+            @livewire('pages.home.pets-card', ['pet' => $item], key($item->id))
+        @empty
+            <div class="text-center">
+                <h1 class="text-3xl font-bold">No Pets Found</h1>
+            </div>
+        @endforelse
     </div>
 </div>
