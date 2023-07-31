@@ -21,30 +21,34 @@ class Main extends Component
     public $search = '';
 
 
+    protected $rules = [
+        'name' => 'required | string',
+        'age' => 'required | numeric',
+        'price' => 'required | numeric',
+        'gender' => 'required',
+        'description' => 'required',
+        'breed' => 'required',
+        'color' => 'required',
+        'category_id' => 'required',
+        'image' => 'required | image | mimes:jpeg,png,jpg,gif | max:2048',
+
+    ];
+    protected $messages = [
+        'required' => 'هذا الحقل مطلوب',
+        'min' => 'هذا الحقل يجب أن يكون على الأقل :min حروف',
+        'image' => 'هذا الحقل يجب أن يكون صورة',
+        'mimes' => 'هذا الحقل يجب أن يكون من نوع :values',
+        'max' => 'هذا الحقل يجب أن لا يتجاوز :max كيلوبايت',
+        'unique' => 'هذا الحقل موجود مسبقاً',
+        'string' => 'يجب ان يكون نص',
+        'boolean' => 'يجب ان يكون صح او خطأ',
+        'numeric' => 'يجب ان يكون رقم',
+    ];
+
     function addPet()
     {
-
-        $messages = [
-            'required' => 'هذا الحقل مطلوب',
-            'min' => 'هذا الحقل يجب أن يكون على الأقل :min حروف',
-            'image' => 'هذا الحقل يجب أن يكون صورة',
-            'mimes' => 'هذا الحقل يجب أن يكون من نوع :values',
-            'max' => 'هذا الحقل يجب أن لا يتجاوز :max كيلوبايت',
-            'unique' => 'هذا الحقل موجود مسبقاً',
-        ];
-
         // upload the image to the database
-        $this->validate([
-            'name' => 'required',
-            'age' => 'required',
-            'price' => 'required',
-            'gender' => 'required',
-            'description' => 'required',
-            'breed' => 'required',
-            'color' => 'required',
-            'category_id' => 'required',
-            'image' => 'required', // 1MB Max
-        ]);
+        $this->validate();
         $ext = $this->image->extension();
         $name = time() . '.' . $ext;
         $this->image->storeAs('public/pets', $name);
