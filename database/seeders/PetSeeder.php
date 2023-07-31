@@ -21,7 +21,8 @@ class PetSeeder extends Seeder
             "description" => "dog",
             "breed" => "dog",
             "color" => "black",
-            "image" => "dog.jpg",
+            // dog image from https://www.pexels.com/photo/adorable-animal-animal-photography-canine-356378/
+            "image" => "https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
             // "status" => 1,
             "category_id" => "1"
         ]);
@@ -34,7 +35,7 @@ class PetSeeder extends Seeder
             "description" => "dog",
             "breed" => "dog",
             "color" => "white",
-            "image" => "dog.jpg",
+            "image" => "https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
             // "status" => 2,
             "category_id" => "1"
         ]);
@@ -45,9 +46,11 @@ class PetSeeder extends Seeder
             "price" => 500,
             "gender" => 2,
             "description" => "cat description",
-            "breed" => "dog",
+            "breed" => "cat",
             "color" => "white",
-            "image" => "cat.jpg",
+             // cat image from https://www.pexels.com/photo/adorable-animal-animal-photography-canine-356378/
+            "image" => "https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+
             // "status" => 1,
             "category_id" => "2"
         ]);

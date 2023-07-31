@@ -42,3 +42,4 @@ Route::get("/about", About::class)->name("about");
 Route::get("/pet", Pet::class)->name("pet");
 Route::get("/pet/{id}", ShowPet::class)->name("showPet");
 Route::get("/category/{id}", ShowCategory::class)->name("showCategory");
+Route::get("/category/{id}/pets", ShowCategory::class)->name("showCategoryPet");

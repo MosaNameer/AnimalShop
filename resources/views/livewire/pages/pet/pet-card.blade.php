@@ -34,7 +34,7 @@
                     {{-- <span class="text-sm text-gray-800 line-through">$210</span> --}}
                 </p>
             </div>
-            <a href="#"
+            <a href="https://api.whatsapp.com/send?phone=+9647732323440&text=مرحبا" target="_blank"
                 class="hover:border-white/40 flex items-center justify-center rounded-md border border-transparent bg-purple-500 px-5 py-2.5 text-center text-sm font-medium text-gray-800 focus:outline-none focus:ring-4 focus:ring-blue-300">
                 <svg xmlns="http://www.w3.org/2000/svg" width="31.76" height="32" viewBox="0 0 256 258">
                     <defs>

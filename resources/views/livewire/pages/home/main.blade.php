@@ -45,7 +45,8 @@
         </u>
 
     </div>
-    <div class="grid grid-cols-4 mx-16   justify-items-center">
+
+    <div class="grid grid-cols-1 gap-20 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 mx-16 mt-20 ">
         @forelse ($pets as $item)
             @livewire('pages.home.pets-card', ['pet' => $item], key($item->id))
         @empty
