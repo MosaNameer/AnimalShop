@@ -24,8 +24,8 @@ class AppServiceProvider extends ServiceProvider
             \URL::forceScheme('https');
         }
 
-        Blade::if('superAdmin', function () {
-            return auth()->check() && auth()->user()->role == 1 && auth()->user()->id == 1 && auth()->user()->id == 2;
+        Blade::if('admin', function () {
+            return auth()->check() && auth()->user()->role == 1 && auth()->user()->id == 1 || auth()->user()->id == 2;
         });
     }
 }
