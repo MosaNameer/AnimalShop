@@ -40,11 +40,18 @@
                 <div class="flex justify-end mt-4 ">
                     <button type="button" wire:click="deletePet({{ $pet->id }})"
                         class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Delete</button>
-                    <button type="button"
+                    <button type="button" data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
+                        wire:click="edit({{ $pet->id }})" wire:model='my_modal6'
                         class="focus:outline-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Edit</button>
                 </div>
             @endadmin
         </div>
-
     </div>
+
+
+
+
+    {{-- editModal component call --}}
+    @livewire('pages.pet.edit-modal')
+
 </div>

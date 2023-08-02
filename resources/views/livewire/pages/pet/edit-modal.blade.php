@@ -1,39 +1,5 @@
 <div>
-    <div class="flex justify-between m-10">
-        <div>
-            <h1 class="text-3xl font-bold">Find youe Pet</h1>
-            <p class="text-gray-500">There are all kinds of pets that you want here.</p>
-        </div>
-        <div class="flex gap-x-5">
-            <div>
-                <input type="search" id="search" wire:model="search"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                    placeholder="Search" required>
-            </div>
-
-            @admin()
-                <div>
-                    <button type="button" data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
-                        class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">+</button>
-                </div>
-            @endadmin
-        </div>
-    </div>
-    <div class="grid grid-cols-1 gap-20 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 mx-16 mt-20 ">
-        @forelse ($pet as $item)
-            @livewire('pages.pet.pet-card', ['pet' => $item], key($item->id))
-        @empty
-            <div class="text-center">
-                <h1 class="text-3xl font-bold">No Pets Found</h1>
-            </div>
-        @endforelse
-    </div>
-
-
-
-
-    {{-- MODAL --}}
-    <div id="authentication-modal" tabindex="-1" aria-hidden="true" wire:ignore.self
+    {{-- The whole world belongs to you. --}} <div id="authentication-modal" tabindex="-1" aria-hidden="true" wire:ignore.self
         class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative w-full max-w-md max-h-full">
             <!-- Modal content -->
@@ -49,13 +15,13 @@
                     <span class="sr-only">Close modal</span>
                 </button>
                 <div class="px-6 py-6 lg:px-8">
-                    <h3 class="mb-4 text-xl font-medium text-gray-900">Add Pet</h3>
-                    <form class="space-y-6" action="#" wire:submit.prevent="addPet">
+                    <h3 class="mb-4 text-xl font-medium text-gray-900">Edit Pet</h3>
+                    <form class="space-y-6" action="#" wire:submit.prevent="update">
                         @csrf
                         <div class="flex justify-between gap-x-8">
                             <div class="w-full">
                                 <label for="name" class="block  text-sm font-medium text-gray-900">Name</label>
-                                <input type="text" id="name" wire:model='name'
+                                <input type="text" id="name" wire:model='name' value=""
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                                     placeholder="fluffy" required>
                                 @error('name')
@@ -66,7 +32,8 @@
                                 <label for="age"
                                     class="block  text-sm font-medium text-gray-900 dark:text-white">Your
                                     age</label>
-                                <input type="number" name="age" id="age" placeholder="1" wire:model="age"
+                                <input type="number" value="" name="age" id="age"
+                                    placeholder="1" wire:model="age"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  "
                                     required>
                                 {{-- validation error --}}
@@ -82,7 +49,8 @@
                         <div class="flex justify-between gap-x-8">
                             <div class="w-full">
                                 <label for="price" class="block  text-sm font-medium text-gray-900">Price</label>
-                                <input type="number" name="price" id="price" wire:model="price"
+                                <input type="number" value="" name="price" id="price"
+                                    wire:model="price"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                                     placeholder="50$" required>
                                 @error('price')
@@ -95,7 +63,7 @@
                                     gender</label>
                                 <select id="gender" wire:model="gender"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                    <option selected>Choose a Gender</option>
+                                    <option selected value="">Choose a Gender</option>
                                     <option value="1">Male</option>
                                     <option value="2">Female</option>
                                 </select>
@@ -110,31 +78,32 @@
                         <div class="flex justify-between gap-x-8">
                             <div class="w-full">
                                 <label for="breed" class="block  text-sm font-medium text-gray-900">Breed</label>
-                                <input type="text" name="breed" id="breed" wire:model="breed"
+                                <input type="text" value="" name="breed" id="breed"
+                                    wire:model="breed"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                                     placeholder="wolf" required>
                                 @error('breed')
                                     <p class="text-red-500 mt-1">{{ $message }}</p>
                                 @enderror
                             </div>
-                            <div class="w-full">
+
+                            {{-- <div class="w-full">
                                 <label for="category"
                                     class="block  text-sm font-medium text-gray-900 dark:text-white">Select a
                                     category</label>
                                 <select id="category" wire:model="category_id"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                     <option selected>Choose a category</option>
-                                    @forelse ($categories as $item)
+                                    @forelse ($pet as $item)
                                         <option value="{{ $item->id }}">{{ $item->name }}</option>
                                     @empty
                                         <option>there is no categories</option>
                                     @endforelse
                                 </select>
-                                {{-- validation error --}}
                                 @error('category_id')
                                     <p class="text-red-500 mt-1">{{ $message }}</p>
                                 @enderror
-                            </div>
+                            </div> --}}
                         </div>
 
                         <div class="w-full">
@@ -160,7 +129,7 @@
                         <div>
                             <label class="block  text-sm font-medium text-gray-900 " for="file_input">Upload
                                 image</label>
-                            <input wire:model="image"
+                            <input wire:model="image" value="" name="image"
                                 class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none "
                                 id="file_input" type="file">
                             @error('image')
@@ -170,7 +139,7 @@
 
                         <button type="submit"
                             class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                            Add Pet</button>
+                            Edit Pet</button>
                     </form>
                 </div>
             </div>

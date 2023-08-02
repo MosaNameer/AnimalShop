@@ -61,6 +61,10 @@
                             <input type="text" id="name" wire:model='name'
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                                 placeholder="Dogs" required>
+                                {{-- validation error --}}
+                                @error('name')
+                                        <p class="text-red-500 mt-1">{{ $message }}</p>
+                                    @enderror
                         </div>
                         <div>
                             <label for="message" class="block  text-sm font-medium text-gray-900 ">
@@ -68,6 +72,9 @@
                             <textarea id="message" rows="2" wire:model="description"
                                 class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "
                                 placeholder="Write your description here..."></textarea>
+                                @error('description')
+                                        <p class="text-red-500 mt-1">{{ $message }}</p>
+                                    @enderror
                         </div>
                         <div>
                             <label class="block  text-sm font-medium text-gray-900 " for="file_input">Upload
@@ -75,6 +82,9 @@
                             <input wire:model="image"
                                 class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none "
                                 id="file_input" type="file">
+                                @error('image')
+                                        <p class="text-red-500 mt-1">{{ $message }}</p>
+                                    @enderror
                         </div>
 
                         <button type="submit"
