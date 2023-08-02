@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Pages\Pet;
 
+use App\Models\Category;
 use App\Models\Pet;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -14,6 +15,7 @@ class EditModal extends Component
     protected $listeners = ['$refresh', 'search', 'deletePet', 'editPet'];
     public $name, $age, $price, $gender, $description, $breed, $color, $image, $category_id;
     public $pet;
+    public $category;
     public $ID;
     protected $rules = [
         'name' => 'required | string',
@@ -25,7 +27,6 @@ class EditModal extends Component
         'color' => 'required',
         'category_id' => 'required',
         'image' => 'required | image | mimes:jpeg,png,jpg,gif | max:2048',
-
     ];
     protected $messages = [
         'required' => 'هذا الحقل مطلوب',
@@ -121,6 +122,10 @@ class EditModal extends Component
         $this->emit('closeModal');
     }
 
+    public function mount()
+    {
+        $this->category = Category::all();
+    }
     public function render()
     {
         return view('livewire.pages.pet.edit-modal');

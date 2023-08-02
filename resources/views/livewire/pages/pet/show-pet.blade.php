@@ -19,6 +19,9 @@
                     @endif
                 </span>
             </h1>
+            <h1 class="text-3xl font-semibold">Category:
+                <span>{{ $pet }}</span>
+            </h1>
             <h1 class="text-3xl font-semibold">Breed:
                 <span>{{ $pet->breed }}</span>
             </h1>

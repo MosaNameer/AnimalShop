@@ -11,10 +11,8 @@ class ShowPet extends Component
     use WithFileUploads;
 
     protected $listeners = ['$refresh', 'search', 'deletePet', 'closeModal'];
-    public $name, $age, $price, $gender, $description, $breed, $color, $image, $category_id;
     public $pet;
     public $my_modal1;
-
     public $ID;
 
 
@@ -60,11 +58,10 @@ class ShowPet extends Component
         $this->my_modal1 = false;
     }
 
-
-
     public function mount($id)
     {
-        $this->pet = Pet::find($id);
+        $this->pet = Pet::with('category')->find($id);
+        dd($this->pet);
     }
     public function render()
     {

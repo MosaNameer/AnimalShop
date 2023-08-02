@@ -87,14 +87,14 @@
                                 @enderror
                             </div>
 
-                            {{-- <div class="w-full">
+                            <div class="w-full">
                                 <label for="category"
                                     class="block  text-sm font-medium text-gray-900 dark:text-white">Select a
                                     category</label>
                                 <select id="category" wire:model="category_id"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                    <option selected>Choose a category</option>
-                                    @forelse ($pet as $item)
+                                    <option selected value="{{ $category_id }}">Choose a category</option>
+                                    @forelse ($category as $item)
                                         <option value="{{ $item->id }}">{{ $item->name }}</option>
                                     @empty
                                         <option>there is no categories</option>
@@ -103,7 +103,7 @@
                                 @error('category_id')
                                     <p class="text-red-500 mt-1">{{ $message }}</p>
                                 @enderror
-                            </div> --}}
+                            </div>
                         </div>
 
                         <div class="w-full">
