@@ -32,8 +32,8 @@
                                 <label for="age"
                                     class="block  text-sm font-medium text-gray-900 dark:text-white">Your
                                     age</label>
-                                <input type="number" value="" name="age" id="age"
-                                    placeholder="1" wire:model="age"
+                                <input type="number" value="" name="age" id="age" placeholder="1"
+                                    wire:model="age"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  "
                                     required>
                                 {{-- validation error --}}
@@ -49,8 +49,7 @@
                         <div class="flex justify-between gap-x-8">
                             <div class="w-full">
                                 <label for="price" class="block  text-sm font-medium text-gray-900">Price</label>
-                                <input type="number" value="" name="price" id="price"
-                                    wire:model="price"
+                                <input type="number" value="" name="price" id="price" wire:model="price"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                                     placeholder="50$" required>
                                 @error('price')
@@ -78,8 +77,7 @@
                         <div class="flex justify-between gap-x-8">
                             <div class="w-full">
                                 <label for="breed" class="block  text-sm font-medium text-gray-900">Breed</label>
-                                <input type="text" value="" name="breed" id="breed"
-                                    wire:model="breed"
+                                <input type="text" value="" name="breed" id="breed" wire:model="breed"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                                     placeholder="wolf" required>
                                 @error('breed')
