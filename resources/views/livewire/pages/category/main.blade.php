@@ -13,10 +13,10 @@
                     placeholder="Search" required>
             </div>
             @admin()
-            <div>
-                <button type="button" data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
-                    class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">+</button>
-            </div>
+                <div>
+                    <button type="button" data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
+                        class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">+</button>
+                </div>
             @endadmin
         </div>
 
@@ -61,10 +61,10 @@
                             <input type="text" id="name" wire:model='name'
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                                 placeholder="Dogs" required>
-                                {{-- validation error --}}
-                                @error('name')
-                                        <p class="text-red-500 mt-1">{{ $message }}</p>
-                                    @enderror
+                            {{-- validation error --}}
+                            @error('name')
+                                <p class="text-red-500 mt-1">{{ $message }}</p>
+                            @enderror
                         </div>
                         <div>
                             <label for="message" class="block  text-sm font-medium text-gray-900 ">
@@ -72,9 +72,9 @@
                             <textarea id="message" rows="2" wire:model="description"
                                 class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "
                                 placeholder="Write your description here..."></textarea>
-                                @error('description')
-                                        <p class="text-red-500 mt-1">{{ $message }}</p>
-                                    @enderror
+                            @error('description')
+                                <p class="text-red-500 mt-1">{{ $message }}</p>
+                            @enderror
                         </div>
                         <div>
                             <label class="block  text-sm font-medium text-gray-900 " for="file_input">Upload
@@ -82,9 +82,9 @@
                             <input wire:model="image"
                                 class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none "
                                 id="file_input" type="file">
-                                @error('image')
-                                        <p class="text-red-500 mt-1">{{ $message }}</p>
-                                    @enderror
+                            @error('image')
+                                <p class="text-red-500 mt-1">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <button type="submit"
