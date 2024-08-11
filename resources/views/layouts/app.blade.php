@@ -23,28 +23,34 @@
 <body class="font-sans antialiased bg-gradient-to-br from-pink-300 via-purple-300 to-indigo-400">
     <x-banner />
 
-    <div class="min-h-screen ">
-        {{-- @livewire('navigation-menu') --}}
-        @livewire('components.navbar.main')
+    <div class="flex min-h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-gray-800 text-white">
+            @livewire('components.navbar.main')
+        </aside>
 
-        <!-- Page Heading -->
-        @if (isset($header))
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
-        @endif
+        <!-- Main content -->
+        <div class="flex-1 flex flex-col">
+            <!-- Page Heading -->
+            @if (isset($header))
+                <header class="bg-white shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        {{ $header }}
+                    </div>
+                </header>
+            @endif
 
-        <!-- Page Content -->
-        <main>
-            {{ $slot }}
-        </main>
+            <!-- Page Content -->
+            <main class="flex-1">
+                {{ $slot }}
+            </main>
 
-        <p class="text-center text-sm text-gray-500 my-10">
-            &copy; جميع الحقوق محفوظة لدى شركة تقنونة ٢٠٢٣
-        </p>
+            <p class="text-center text-sm text-gray-500 my-10">
+                &copy; جميع الحقوق محفوظة لدى شركة تقنونة ٢٠٢٣
+            </p>
+        </div>
     </div>
+
 
     @stack('modals')
 

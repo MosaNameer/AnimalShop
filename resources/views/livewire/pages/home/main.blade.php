@@ -24,9 +24,9 @@
         <u>
             <a href="{{ route('category') }}" class="mr-16 font-semibold text-xl">more</a>
         </u>
-
     </div>
-    <div class="grid grid-cols-3 mx-16   justify-items-center">
+
+    <div class="grid grid-cols-3 mx-16 justify-items-center">
         @forelse ($categories as $item)
             @livewire('pages.home.category-card', ['category' => $item], key($item->id))
         @empty

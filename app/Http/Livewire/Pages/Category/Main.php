@@ -22,7 +22,6 @@ class Main extends Component
         'name' => 'required | string',
         'description' => 'required' | 'string',
         'image' => 'required | image | mimes:jpeg,png,jpg,gif | max:2048',
-
     ];
     protected $messages = [
         'required' => 'هذا الحقل مطلوب',
@@ -52,7 +51,6 @@ class Main extends Component
         session()->flash('message', 'تم إضافة الفئة بنجاح.');
         return redirect()->to(route('category'));
     }
-
 
     // public function mount(){
     // }
